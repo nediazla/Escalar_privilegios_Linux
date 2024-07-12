@@ -1,3 +1,4 @@
+[![GitHub sponsors](https://undergroundwires.dev/img/badges/donate/flat.svg)](https://www.buymeacoffee.com/nediazla3)
 # Tools
 
 Hay muchos scripts que puedes ejecutar en una máquina Linux y que enumeran automáticamente
